@@ -1,4 +1,5 @@
 import streamlit as st
+import openai
 from streamlit_chat import message
 
 from langchain.chat_models import ChatOpenAI
@@ -10,7 +11,7 @@ from langchain.prompts.chat import (
     HumanMessagePromptTemplate,
     MessagesPlaceholder,
 )
-OPENAI_API_KEY = st.secrets['APIKEY']['OPENAI_API_KEY']
+openai.api_key = st.secrets['APIKEY']['OPENAI_API_KEY']
 template = """
 あなたは聞かれた質問に答える優秀なアシスタントです。
 以下に株式会社Nucoの会社情報を書きます。
