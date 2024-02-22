@@ -70,7 +70,8 @@ https://www.kikoh-sports.com/contact/
 
 これを元に質問に答えてください。
 
-上記以外の質問には答えれない事を丁寧に伝えてください。
+上記以外の質問には答えれない場合は以下のURLを提示してください。
+https://www.kikoh-sports.com/index.html
 """
 # 会話のテンプレートを作成
 prompt = ChatPromptTemplate.from_messages([
