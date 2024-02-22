@@ -1,5 +1,4 @@
 import streamlit as st
-import openai
 from streamlit_chat import message
 
 from langchain.chat_models import ChatOpenAI
@@ -11,7 +10,7 @@ from langchain.prompts.chat import (
     HumanMessagePromptTemplate,
     MessagesPlaceholder,
 )
-openai.api_key = st.secrets['APIKEY']['OPENAI_API_KEY']
+OPENAI_API_KEY = st.secrets['APIKEY']['OPENAI_API_KEY']
 template = """
 あなたは聞かれた質問に答える優秀なアシスタントです。
 以下に株式会社Nucoの会社情報を書きます。
@@ -59,7 +58,8 @@ prompt = ChatPromptTemplate.from_messages([
 def load_conversation():
     llm = ChatOpenAI(
         model_name="gpt-4-0613",
-        temperature=0
+        temperature=0,
+	openai_api_key=OPENAI_API_KEY
     )
     memory = ConversationBufferMemory(return_messages=True)
     conversation = ConversationChain(
