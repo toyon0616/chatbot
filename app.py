@@ -10,7 +10,7 @@ from langchain.prompts.chat import (
     HumanMessagePromptTemplate,
     MessagesPlaceholder,
 )
-OPENAI_API_KEY = st.secrets['app.py']['OPENAI_API_KEY']
+OPENAI_API_KEY = st.secrets['APIKEY']['OPENAI_API_KEY']
 template = """
 あなたは聞かれた質問に答える優秀なアシスタントです。
 以下に株式会社Nucoの会社情報を書きます。
